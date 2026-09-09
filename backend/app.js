@@ -9,6 +9,10 @@ const contactsRoutes = require('./routes/contacts');
 const port = process.env.PORT || 8080;
 const app = express();
 
+app.get('/', (req, res) => {
+    res.send('Welcome to my CSE341');
+});
+
 app
     .use(bodyParser.json())
     .use((req, res, next) => {
