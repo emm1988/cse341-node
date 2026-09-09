@@ -1,0 +1,5 @@
+### Getting all contacts
+GET http://localhost:8080/contacts
+
+### Getting only one contact
+GET http://localhost:8080/contacts/6aa18303769170fc9f25e950

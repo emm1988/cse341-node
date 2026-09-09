@@ -1,3 +1,8 @@
+const dns = require('dns');
+
+// Using Google DNS servers for name resolution
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -25,10 +30,12 @@ const getDb = () => {
     if (!_db) {
         throw Error('Db not initialized');
     }
+
     return _db;
 };
 
 module.exports = {
     initDb,
     getDb
-};  
+};
+
