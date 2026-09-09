@@ -10,7 +10,7 @@ const port = process.env.PORT || 8080;
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('Welcome to my CSE341');
+    res.send('Welcome to CSE341');
 });
 
 app
