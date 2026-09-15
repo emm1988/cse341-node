@@ -5,10 +5,9 @@
     "description": "Contacts Project API Documentation",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "//onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
