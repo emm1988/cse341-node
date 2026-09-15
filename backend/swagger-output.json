@@ -8,7 +8,6 @@
   "host": "cse341-node-tpx2.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
