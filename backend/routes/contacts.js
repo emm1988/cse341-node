@@ -4,10 +4,11 @@ const router = express.Router();
 // Import the contacts controller
 const contactsController = require('../controllers/contacts');
 
-// Route to get all contacts
+//CRUD 
 router.get('/', contactsController.getAll);
-
-// Route to get a single contact by ID
 router.get('/:id', contactsController.getSingle);
+router.post('/', contactsController.createContact);
+router.put('/:id', contactsController.updateContact);
+router.delete('/:id', contactsController.deleteContact);
 
 module.exports = router;
