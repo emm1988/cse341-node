@@ -10,7 +10,9 @@ const doc = {
     description: 'Contacts Project API Documentation'
     },
     host: 'cse341-node-tpx2.onrender.com',
-    schemes: isProduction ? ['https'] : ['http', 'https']
+  schemes: [
+    'https'
+  ]
 };
 
 const outputFile = './swagger-output.json';
