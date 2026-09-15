@@ -9,7 +9,7 @@ const doc = {
     title: 'Contacts API',
     description: 'Contacts Project API Documentation'
     },
-    host: hostUrl,
+    host: 'cse341-node-tpx2.onrender.com',
     schemes: isProduction ? ['https'] : ['http', 'https']
 };
 

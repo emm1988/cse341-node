@@ -5,9 +5,10 @@
     "description": "Contacts Project API Documentation",
     "version": "1.0.0"
   },
-  "host": "onrender.com",
+  "host": "cse341-node-tpx2.onrender.com",
   "basePath": "/",
   "schemes": [
+    "http",
     "https"
   ],
   "paths": {
