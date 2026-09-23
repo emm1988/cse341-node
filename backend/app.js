@@ -9,6 +9,11 @@ const professionalRoutes = require('./routes/professional');
 const port = process.env.PORT || 8080;
 const app = express();
 
+// Global error handling for uncaught exceptions
+process.on('uncaughtException', (err, origin) => {
+  console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+});
+
 // Middlewares
 app
     .use(bodyParser.json())
@@ -21,6 +26,7 @@ app
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         next();
     });
+
 
 app.use('/', swaggerRoutes);
 
