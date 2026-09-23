@@ -1,0 +1,54 @@
+### GET all expenses
+GET http://localhost:3000/expenses
+
+### CREATE a new expense (POST)
+POST http://localhost:3000/expenses
+Content-Type: application/json
+
+{
+  "concept": "Water Bill",
+  "amount": 45.20,
+  "category": "Home",
+  "date": "2026-03-23",
+  "paymentMethod": "Credit Card",
+  "notes": "March water bill payment",
+  "tags": ["utility", "monthly"],
+  "userId": "user_dev_456"
+}
+
+### CREATE a new expense (POST)
+POST http://localhost:3000/expenses
+Content-Type: application/json
+
+{
+  "concept": "Pizza Lunch",
+  "amount": 45.20,
+  "category": "Food",
+  "date": "2026-06-23",
+  "paymentMethod": "cash",
+  "notes": "June pizza night with friends",
+  "tags": ["food", "friends"],
+  "userId": "Emmanuel"
+}
+
+### GET a single expense by ID
+GET http://localhost:3000/expenses/6ab449afc2e2fcb5a30f9127
+
+### UPDATE an existing expense (PUT)
+PUT http://localhost:3000/expenses/6ab449afc2e2fcb5a30f9127
+Content-Type: application/json
+
+{
+  "concept": "Pizza Night",
+  "amount": 45.20,
+  "category": "Food",
+  "date": "2026-06-23",
+  "paymentMethod": "Credit Card",
+  "notes": "June pizza night with friends",
+  "tags": ["food", "friends"],
+  "userId": "Emmanuel"
+}
+
+### DELETE an expense by ID
+DELETE http://localhost:3000/expenses/6ab449afc2e2fcb5a30f9127
+
