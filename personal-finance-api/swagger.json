@@ -5,7 +5,7 @@
     "description": "API documenting personal expenses tracking for W03 Project",
     "version": "1.0.0"
   },
-  "host": "finance-tracker-d4bh.onrender.com",
+  "host": "://onrender.com",
   "basePath": "/",
   "schemes": [
     "https",
@@ -188,6 +188,67 @@
           "default": {
             "description": ""
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "expenses": {
+      "type": "object",
+      "properties": {
+        "concept": {
+          "type": "string",
+          "example": "Water Bill"
+        },
+        "amount": {
+          "type": "number",
+          "example": 45.2
+        },
+        "category": {
+          "type": "string",
+          "example": "Home"
+        },
+        "date": {
+          "type": "string",
+          "example": "2026-03-23"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "example": "Credit Card"
+        },
+        "notes": {
+          "type": "string",
+          "example": "March water bill payment"
+        },
+        "tags": {
+          "type": "array",
+          "example": [
+            "utility"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "userId": {
+          "type": "string",
+          "example": "user_dev_456"
+        }
+      }
+    },
+    "categories": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Entertainment"
+        },
+        "description": {
+          "type": "string",
+          "example": "Movies, streaming services, and hobbies"
+        },
+        "color": {
+          "type": "string",
+          "example": "#FF5733"
         }
       }
     }
