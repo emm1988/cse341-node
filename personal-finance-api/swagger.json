@@ -5,11 +5,11 @@
     "description": "API documenting personal expenses tracking for W03 Project",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "://finance-tracker-d4bh.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/": {
