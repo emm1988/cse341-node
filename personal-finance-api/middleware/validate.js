@@ -15,7 +15,27 @@ const saveExpense = (req, res, next) => {
 
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
-      res.status(412).send({
+      res.status(400).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
+const saveCategory = (req, res, next) => {
+  const validationRule = {
+    name: 'required|string|max:50',
+    description: 'string|max:150',
+    color: 'string'
+  };
+
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(400).send({
         success: false,
         message: 'Validation failed',
         data: err
@@ -27,5 +47,6 @@ const saveExpense = (req, res, next) => {
 };
 
 module.exports = {
-  saveExpense
+  saveExpense,
+  saveCategory
 };

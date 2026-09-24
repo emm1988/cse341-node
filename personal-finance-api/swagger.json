@@ -12,18 +12,24 @@
     "https"
   ],
   "paths": {
-    "/api-docs": {
+    "/": {
       "get": {
+        "tags": [
+          "Welcome"
+        ],
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
         }
       }
     },
     "/expenses/": {
       "get": {
+        "tags": [
+          "Expenses"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -32,16 +38,22 @@
         }
       },
       "post": {
+        "tags": [
+          "Expenses"
+        ],
         "description": "",
         "responses": {
-          "412": {
-            "description": "Precondition Failed"
+          "400": {
+            "description": "Bad Request"
           }
         }
       }
     },
     "/expenses/{id}": {
       "get": {
+        "tags": [
+          "Expenses"
+        ],
         "description": "",
         "parameters": [
           {
@@ -58,6 +70,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Expenses"
+        ],
         "description": "",
         "parameters": [
           {
@@ -68,12 +83,98 @@
           }
         ],
         "responses": {
-          "412": {
-            "description": "Precondition Failed"
+          "400": {
+            "description": "Bad Request"
           }
         }
       },
       "delete": {
+        "tags": [
+          "Expenses"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/categories/": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Categories"
+        ],
+        "description": "",
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/categories/{id}": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Categories"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Categories"
+        ],
         "description": "",
         "parameters": [
           {

@@ -52,3 +52,27 @@ Content-Type: application/json
 ### DELETE an expense by ID
 DELETE http://localhost:3000/expenses/6ab449afc2e2fcb5a30f9127
 
+
+### CATEGORIES COLLECTION OPERATIONS
+### ==========================================
+
+### GET all categories
+GET http://localhost:3000/categories
+
+### CREATE a new category (POST)
+POST http://localhost:3000/categories
+Content-Type: application/json
+
+{
+  "name": "Food",
+  "description": "Meals, groceries, and dining out",
+  "color": "#f31396"
+}
+
+### CREATE a category with missing data
+POST http://localhost:3000/categories
+Content-Type: application/json
+
+{
+  "description": "Missing required name property field"
+}
