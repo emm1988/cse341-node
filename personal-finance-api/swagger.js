@@ -5,8 +5,8 @@ const doc = {
     title: 'Personal Finance API',
     description: 'API documenting personal expenses tracking for W03 Project',
   },
-  host: 'localhost:3000',
-  schemes: ['http', 'https'],
+  host: '://finance-tracker-d4bh.onrender.com',
+  schemes: ['https', 'http'],
 };
 
 const outputFile = './swagger.json';
