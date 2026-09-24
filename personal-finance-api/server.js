@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const mongodb = require('./config/db');
 
-// Import your separate routers exactly like your previous assignment
 const expensesRoutes = require('./routes/expenses');
 const categoriesRoutes = require('./routes/categories');
 const swaggerUi = require('swagger-ui-express');

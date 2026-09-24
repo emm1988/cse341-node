@@ -1,8 +1,8 @@
 ### GET all expenses
-GET http://localhost:3000/expenses
+GET https://finance-tracker-d4bh.onrender.com/expenses
 
 ### CREATE a new expense (POST)
-POST http://localhost:3000/expenses
+POST https://finance-tracker-d4bh.onrender.com/expenses
 Content-Type: application/json
 
 {
@@ -17,7 +17,7 @@ Content-Type: application/json
 }
 
 ### CREATE a new expense (POST)
-POST http://localhost:3000/expenses
+POST https://finance-tracker-d4bh.onrender.com/expenses
 Content-Type: application/json
 
 {
@@ -32,10 +32,10 @@ Content-Type: application/json
 }
 
 ### GET a single expense by ID
-GET http://localhost:3000/expenses/6ab449afc2e2fcb5a30f9127
+GET https://finance-tracker-d4bh.onrender.com/expenses/6ab449afc2e2fcb5a30f9127
 
 ### UPDATE an existing expense (PUT)
-PUT http://localhost:3000/expenses/6ab449afc2e2fcb5a30f9127
+PUT https://finance-tracker-d4bh.onrender.com/expenses/6ab449afc2e2fcb5a30f9127
 Content-Type: application/json
 
 {
@@ -50,17 +50,17 @@ Content-Type: application/json
 }
 
 ### DELETE an expense by ID
-DELETE http://localhost:3000/expenses/6ab449afc2e2fcb5a30f9127
+DELETE https://finance-tracker-d4bh.onrender.com/expenses/6ab449afc2e2fcb5a30f9127
 
 
 ### CATEGORIES COLLECTION OPERATIONS
 ### ==========================================
 
 ### GET all categories
-GET http://localhost:3000/categories
+GET https://finance-tracker-d4bh.onrender.com/categories
 
 ### CREATE a new category (POST)
-POST http://localhost:3000/categories
+POST https://finance-tracker-d4bh.onrender.com/categories
 Content-Type: application/json
 
 {
@@ -70,7 +70,7 @@ Content-Type: application/json
 }
 
 ### CREATE a category with missing data
-POST http://localhost:3000/categories
+POST https://finance-tracker-d4bh.onrender.com/categories
 Content-Type: application/json
 
 {
