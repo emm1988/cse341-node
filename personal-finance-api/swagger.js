@@ -5,7 +5,7 @@ const doc = {
     title: 'Personal Finance API',
     description: 'API documenting personal expenses tracking for W03 Project',
   },
-  host: 'finance-tracker-d4bh.onrender.com',
+  host: 'cse341-node-tpx2.onrender.com',
   schemes: ['https', 'http'],
 };
 

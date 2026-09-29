@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const mongodb = require('./config/db');
 
+const session = require('express-session');
+const passport = require('./config/passport');
+
 const expensesRoutes = require('./routes/expenses');
 const categoriesRoutes = require('./routes/categories');
 const swaggerUi = require('swagger-ui-express');
@@ -19,13 +22,45 @@ process.on('uncaughtException', (err, origin) => {
 app.use(cors());
 app.use(express.json());
 
+// Passport and session configuration
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+
+app.get('/login', passport.authenticate('github', { scope: [ 'user:email' ] }));
+
+app.get('/github/callback', 
+  passport.authenticate('github', { failureRedirect: '/api-docs' }),
+  (req, res) => {
+    req.session.user = req.user;
+    res.redirect('/');
+  }
+);
+
+app.get('/logout', (req, res, next) => {
+  req.logout((err) => {
+    if (err) { return next(err); }
+    req.session.destroy(() => {
+      res.status(200).json({ message: "Logged out successfully." });
+    });
+  });
+});
+
 app.get('/', (req, res) => {
     // #swagger.tags = ['Welcome']
-    res.send('Welcome to the Personal Finance API');
+    if (req.session.user) {
+      res.send(`Logged in as ${req.session.user.username}. Welcome back to the Personal Finance API!`);
+    } else {
+      res.send('Welcome to the Personal Finance API. Access restricted, please login at /login');
+    }
 });
 
 app.use('/expenses', (req, res, next) => {
@@ -57,3 +92,4 @@ mongodb.initDb((err) => {
     console.log(`Database connected. Server listening on execution port: ${port}`);
   }
 });
+
